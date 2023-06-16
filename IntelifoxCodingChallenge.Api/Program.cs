@@ -1,4 +1,6 @@
+using IntelifoxCodingChallenge.Core.Repositories;
 using IntelifoxCodingChallenge.EF;
+using IntelifoxCodingChallenge.EF.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<IntelifoxDbContext>(options =>
         b => b.MigrationsAssembly(typeof(IntelifoxDbContext).Assembly.FullName));
 });
 
+builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
