@@ -89,3 +89,5 @@ C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChalleng
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Api\obj\Debug\net6.0\ref\IntelifoxCodingChallenge.Api.dll
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Api\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.dll
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Api\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
