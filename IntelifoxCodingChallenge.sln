@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge", "IntelifoxCodingChallenge.csproj", "{F417B1A0-03D5-4398-8D5C-C1FE29916B61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {185873E1-73CF-4601-A661-02D8BAB65F69}
+	EndGlobalSection
+EndGlobal
