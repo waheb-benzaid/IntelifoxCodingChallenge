@@ -27,25 +27,25 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         }
 
         [HttpGet("GetAllUsers")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var result = _unitOfWork.Users.GetAllAsync();
+            var result = await _unitOfWork.Users.GetAllAsync();
             return Ok(result);
         }
 
         [HttpGet("Count")]
-        public IActionResult CountAsync()
+        public async Task<IActionResult> CountAsync()
         {
-            var result = _unitOfWork.Users.CountAsync();
+            var result = await _unitOfWork.Users.CountAsync();
             return Ok(result);
         }
 
         [HttpPost("AddUser")]
-        public IActionResult AddArticle(User user)
+        public async Task<IActionResult> AddArticle(User user)
         {
             if (user != null)
             {
-                var result = _unitOfWork.Users.AddAsync(user);
+                var result = await _unitOfWork.Users.AddAsync(user);
                 return Ok(result);
             }
             return BadRequest();

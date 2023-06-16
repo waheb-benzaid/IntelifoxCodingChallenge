@@ -16,8 +16,6 @@ namespace IntelifoxCodingChallenge.Core.Repositories
 
         T Update(T entity);
         void Delete(T entity);
-        void DeleteRange(IEnumerable<T> entities);
-
         Task<int> CountAsync();
     }
 }

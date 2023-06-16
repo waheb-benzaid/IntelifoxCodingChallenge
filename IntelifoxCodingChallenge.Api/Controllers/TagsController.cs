@@ -23,18 +23,25 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var result = _unitOfWork.Tags.GetAllAsync();
+            var result = await _unitOfWork.Tags.GetAllAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("Count")]
+        public async Task<IActionResult> CountAsync()
+        {
+            var result = await _unitOfWork.Tags.CountAsync();
             return Ok(result);
         }
 
         [HttpPost("AddTag")]
-        public IActionResult AddArticle(Tag tag)
+        public async Task<IActionResult> AddArticle(Tag tag)
         {
             if (tag != null)
             {
-                var result = _unitOfWork.Tags.AddAsync(tag);
+                var result = await _unitOfWork.Tags.AddAsync(tag);
                 return Ok(result);
             }
             return BadRequest();
