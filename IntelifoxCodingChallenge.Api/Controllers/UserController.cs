@@ -1,4 +1,6 @@
-﻿using IntelifoxCodingChallenge.Core.Models;
+﻿using AutoMapper;
+using IntelifoxCodingChallenge.Core.Dtos;
+using IntelifoxCodingChallenge.Core.Models;
 using IntelifoxCodingChallenge.Core.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,27 +12,35 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public UserController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public UserController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            if (id != null)
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (!ModelState.IsValid)
             {
                 var result = await _unitOfWork.Users.GetByIdAsync(id);
-                return Ok(result);
+                var userDto = _mapper.Map<UserDTO>(result);
+                return Ok(userDto);
             }
-            return BadRequest();
+            return BadRequest(ModelState);
         }
 
         [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _unitOfWork.Users.GetAllAsync();
-            return Ok(result);
+            var userDto = _mapper.Map<UserDTO>(result);
+            return Ok(userDto);
         }
 
         [HttpGet("Count")]
@@ -41,23 +51,27 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         }
 
         [HttpPost("AddUser")]
-        public async Task<IActionResult> AddArticle(User user)
+        public async Task<IActionResult> AddArticle(UserDTO userDto)
         {
+            var user = _mapper.Map<User>(userDto);
             if (user != null)
             {
                 var result = await _unitOfWork.Users.AddAsync(user);
-                return Ok(result);
+                var createdUser = _mapper.Map<User>(result);
+                return Ok(createdUser);
             }
             return BadRequest();
         }
 
         [HttpPut("UpdateUser")]
-        public IActionResult UpdateUser(User user)
+        public IActionResult UpdateUser(UserDTO userDto)
         {
+            var user = _mapper.Map<User>(userDto);
             if (user != null)
             {
                 var result = _unitOfWork.Users.Update(user);
-                return Ok(result);
+                var updatedUser = _mapper.Map<User>(result);
+                return Ok(updatedUser);
             }
             return BadRequest();
         }

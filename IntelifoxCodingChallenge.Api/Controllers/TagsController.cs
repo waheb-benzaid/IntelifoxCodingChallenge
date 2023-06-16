@@ -1,4 +1,6 @@
-﻿using IntelifoxCodingChallenge.Core.Models;
+﻿using AutoMapper;
+using IntelifoxCodingChallenge.Core.Dtos;
+using IntelifoxCodingChallenge.Core.Models;
 using IntelifoxCodingChallenge.Core.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,23 +12,36 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     public class TagsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public TagsController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public TagsController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _unitOfWork.Tags.GetByIdAsync(id);
-            return Ok(result);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var result = await _unitOfWork.Tags.GetByIdAsync(id);
+                var tagDto = _mapper.Map<TagDTO>(result);
+                return Ok(tagDto);
+            }
+            return BadRequest(ModelState);
         }
 
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _unitOfWork.Tags.GetAllAsync();
-            return Ok(result);
+            var tagDto = _mapper.Map<TagDTO>(result);
+            return Ok(tagDto);
         }
 
         [HttpGet("Count")]
@@ -37,23 +52,27 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         }
 
         [HttpPost("AddTag")]
-        public async Task<IActionResult> AddArticle(Tag tag)
+        public async Task<IActionResult> AddArticle(TagDTO tagDto)
         {
+            var tag = _mapper.Map<Tag>(tagDto);
             if (tag != null)
             {
                 var result = await _unitOfWork.Tags.AddAsync(tag);
-                return Ok(result);
+                var createdTag = _mapper.Map<Tag>(result);
+                return Ok(createdTag);
             }
             return BadRequest();
         }
 
         [HttpPut("UpdateTag")]
-        public IActionResult UpdateTag(Tag tag)
+        public IActionResult UpdateTag(TagDTO tagDto)
         {
+            var tag = _mapper.Map<Tag>(tagDto);
             if (tag != null)
             {
                 var result = _unitOfWork.Tags.Update(tag);
-                return Ok(result);
+                var updatedTag = _mapper.Map<Tag>(result);
+                return Ok(updatedTag);
             }
             return BadRequest();
         }

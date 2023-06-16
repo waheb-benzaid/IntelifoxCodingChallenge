@@ -1,4 +1,6 @@
-﻿using IntelifoxCodingChallenge.Core.Models;
+﻿using AutoMapper;
+using IntelifoxCodingChallenge.Core.Dtos;
+using IntelifoxCodingChallenge.Core.Models;
 using IntelifoxCodingChallenge.Core.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,61 +13,75 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     public class ArticlesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public ArticlesController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public ArticlesController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            if (id != null)
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (!ModelState.IsValid)
             {
                 var result = await _unitOfWork.Articles.GetByIdAsync(id);
-                return Ok(result);
+                var articleDto = _mapper.Map<ArticleDTO>(result);
+                return Ok(articleDto);
             }
-            return BadRequest();
+            return BadRequest(ModelState);
         }
 
         [HttpGet("GetAllAsync")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _unitOfWork.Articles.GetAllAsync();
-            return Ok(result);
+            var articleDto = _mapper.Map<ArticleDTO>(result);
+            return Ok(articleDto);
         }
 
         [HttpGet("Count")]
         public async Task<IActionResult> CountAsync()
         {
             var result = await _unitOfWork.Articles.CountAsync();
-            return Ok(result);
+            var articleDto = _mapper.Map<ArticleDTO>(result); // we can aviod the use of DTO in this case because the return value is a number
+            return Ok(articleDto);
         }
 
         [HttpPost("AddArticle")]
-        public async Task<IActionResult> AddArticle(Article article)
+        public async Task<IActionResult> AddArticle(ArticleDTO articleDto)
         {
+            var article = _mapper.Map<Article>(articleDto);
             if (article != null)
             {
                 var result = await _unitOfWork.Articles.AddAsync(article);
-                return Ok(result);
+                var createdArticleDto = _mapper.Map<ArticleDTO>(result);
+                return Ok(createdArticleDto);
             }
             return BadRequest();
         }
 
         [HttpPut("UpdateArticle")]
-        public IActionResult UpdateArticle(Article article)
+        public IActionResult UpdateArticle(ArticleDTO articleDto)
         {
+            var article = _mapper.Map<Article>(articleDto);
             if (article != null)
             {
                 var result = _unitOfWork.Articles.Update(article);
-                return Ok(result);
+                var updatedArticleDto = _mapper.Map<ArticleDTO>(result);
+                return Ok(updatedArticleDto);
             }
             return BadRequest();
         }
 
         [HttpDelete("DeleteArticle")]
-        public void DeleteArticle(Article article)
+        public void DeleteArticle(ArticleDTO articleDto)
         {
+            var article = _mapper.Map<Article>(articleDto);
             if (article != null)
             {
                 _unitOfWork.Articles.Delete(article);
