@@ -16,12 +16,6 @@ namespace IntelifoxCodingChallenge.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        public IActionResult GetById(int id)
-        {
-            return Ok(_unitOfWork.Categories.GetById(id));
-        }
-
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -32,7 +26,7 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _unitOfWork.Categories.GetAll();
+            var result = _unitOfWork.Categories.GetAllAsync();
             return Ok(result);
         }
 
@@ -41,11 +35,31 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         {
             if (category != null)
             {
-                var result = _unitOfWork.Categories.Add(category);
+                var result = _unitOfWork.Categories.AddAsync(category);
                 return Ok(result);
 
             }
             return BadRequest();
+        }
+
+        [HttpPut("UpdateCategory")]
+        public IActionResult UpdateArticle(Category category)
+        {
+            if (category != null)
+            {
+                var result = _unitOfWork.Categories.Update(category);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete("DeleteCategory")]
+        public void DeleteArticle(Category category)
+        {
+            if (category != null)
+            {
+                _unitOfWork.Categories.Delete(category);
+            }
         }
     }
 }

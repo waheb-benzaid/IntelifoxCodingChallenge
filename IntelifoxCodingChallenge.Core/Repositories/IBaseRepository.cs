@@ -9,12 +9,15 @@ namespace IntelifoxCodingChallenge.Core.Repositories
 {
     public interface IBaseRepository<T> where T : class
     {
-        T GetById(int id);
         Task<T> GetByIdAsync(int id);
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
 
-        T Add(T entity);
+        Task<T> AddAsync(T entity);
 
-        IEnumerable<T> AddRange(IEnumerable<T> entities);
+        T Update(T entity);
+        void Delete(T entity);
+        void DeleteRange(IEnumerable<T> entities);
+
+        Task<int> CountAsync();
     }
 }

@@ -38,22 +38,49 @@ namespace IntelifoxCodingChallenge.Api.Controllers
             return BadRequest();
         }
 
-        [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        [HttpGet("GetAllAsync")]
+        public IActionResult GetAllAsync()
         {
-            var result = _unitOfWork.Articles.GetAll();
+            var result = _unitOfWork.Articles.GetAllAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("Count")]
+        public IActionResult CountAsync()
+        {
+            var result = _unitOfWork.Articles.CountAsync();
             return Ok(result);
         }
 
         [HttpPost("AddArticle")]
-        public IActionResult AddArticle(Article article)
+        public async Task<IActionResult> AddArticle(Article article)
         {
             if (article != null)
             {
-                var result = _unitOfWork.Articles.Add(article);
+                var result = await _unitOfWork.Articles.AddAsync(article);
                 return Ok(result);
             }
             return BadRequest();
+        }
+
+        [HttpPut("UpdateArticle")]
+        public IActionResult UpdateArticle(Article article)
+        {
+            if (article != null)
+            {
+                var result = _unitOfWork.Articles.Update(article);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete("DeleteArticle")]
+        public void DeleteArticle(Article article)
+        {
+            if (article != null)
+            {
+                _unitOfWork.Articles.Delete(article);
+            }
         }
     }
 }

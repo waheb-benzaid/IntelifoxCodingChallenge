@@ -19,26 +19,30 @@ namespace IntelifoxCodingChallenge.EF.Repositories
             _dbContext = dbContext;
         }
 
-        //TODO: test if the params are null for all those methods
-
-        public IEnumerable<T> GetAll() => _dbContext.Set<T>().ToList();
-
-        public T GetById(int id) => _dbContext.Set<T>().Find(id);
+        public async Task<IEnumerable<T>> GetAllAsync() => await _dbContext.Set<T>().ToListAsync();
 
         public async Task<T> GetByIdAsync(int id) => await _dbContext.Set<T>().FindAsync(id);
 
-        public T Add(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            _dbContext.Set<T>().Add(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.Set<T>().AddAsync(entity);
             return entity;
         }
 
-        public IEnumerable<T> AddRange(IEnumerable<T> entities)
+        public T Update(T entity)
         {
-            _dbContext.Set<T>().AddRange(entities);
-            _dbContext.SaveChanges();
-            return entities;
+            _dbContext.Update(entity);
+            return entity;
+        }
+
+        public void Delete(T entity)
+        {
+            _dbContext.Set<T>().Remove(entity);
+        }
+
+        public async Task<int> CountAsync()
+        {
+            return await _dbContext.Set<T>().CountAsync();
         }
     }
 }

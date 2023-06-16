@@ -15,24 +15,28 @@ namespace IntelifoxCodingChallenge.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        public IActionResult GetById(int id)
-        {
-            var result = _unitOfWork.Users.GetById(id);
-            return Ok(result);
-        }
-
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _unitOfWork.Users.GetByIdAsync(id);
+            if (id != null)
+            {
+                var result = await _unitOfWork.Users.GetByIdAsync(id);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+        [HttpGet("GetAllUsers")]
+        public IActionResult GetAll()
+        {
+            var result = _unitOfWork.Users.GetAllAsync();
             return Ok(result);
         }
 
-        [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        [HttpGet("Count")]
+        public IActionResult CountAsync()
         {
-            var result = _unitOfWork.Users.GetAll();
+            var result = _unitOfWork.Users.CountAsync();
             return Ok(result);
         }
 
@@ -41,10 +45,30 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         {
             if (user != null)
             {
-                var result = _unitOfWork.Users.Add(user);
+                var result = _unitOfWork.Users.AddAsync(user);
                 return Ok(result);
             }
             return BadRequest();
+        }
+
+        [HttpPut("UpdateUser")]
+        public IActionResult UpdateUser(User user)
+        {
+            if (user != null)
+            {
+                var result = _unitOfWork.Users.Update(user);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete("DeleteUser")]
+        public void DeleteArticle(User user)
+        {
+            if (user != null)
+            {
+                _unitOfWork.Users.Delete(user);
+            }
         }
     }
 }

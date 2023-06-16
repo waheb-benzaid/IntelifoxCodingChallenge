@@ -15,13 +15,6 @@ namespace IntelifoxCodingChallenge.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        public IActionResult GetById(int id)
-        {
-            var result = _unitOfWork.Tags.GetById(id);
-            return Ok(result);
-        }
-
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -32,7 +25,7 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _unitOfWork.Tags.GetAll();
+            var result = _unitOfWork.Tags.GetAllAsync();
             return Ok(result);
         }
 
@@ -41,10 +34,30 @@ namespace IntelifoxCodingChallenge.Api.Controllers
         {
             if (tag != null)
             {
-                var result = _unitOfWork.Tags.Add(tag);
+                var result = _unitOfWork.Tags.AddAsync(tag);
                 return Ok(result);
             }
             return BadRequest();
+        }
+
+        [HttpPut("UpdateTag")]
+        public IActionResult UpdateTag(Tag tag)
+        {
+            if (tag != null)
+            {
+                var result = _unitOfWork.Tags.Update(tag);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete("DeleteTag")]
+        public void DeleteArticle(Tag tag)
+        {
+            if (tag != null)
+            {
+                _unitOfWork.Tags.Delete(tag);
+            }
         }
     }
 }
