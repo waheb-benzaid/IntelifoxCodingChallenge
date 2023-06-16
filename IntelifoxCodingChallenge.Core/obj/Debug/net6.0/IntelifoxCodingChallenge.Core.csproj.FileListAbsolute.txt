@@ -1,0 +1,12 @@
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.deps.json
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.csproj.AssemblyReference.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.AssemblyInfoInputs.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.AssemblyInfo.cs
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.csproj.CoreCompileInputs.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\refint\IntelifoxCodingChallenge.Core.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\IntelifoxCodingChallenge.Core.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.Core\obj\Debug\net6.0\ref\IntelifoxCodingChallenge.Core.dll

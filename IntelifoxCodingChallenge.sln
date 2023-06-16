@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Api", "IntelifoxCodingChallenge.Api\IntelifoxCodingChallenge.Api.csproj", "{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelifoxCodingChallenge.Api", "IntelifoxCodingChallenge.Api\IntelifoxCodingChallenge.Api.csproj", "{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Core", "IntelifoxCodingChallenge.Core\IntelifoxCodingChallenge.Core.csproj", "{415160F0-99A9-47F5-B178-C1CEA895EACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelifoxCodingChallenge.Core", "IntelifoxCodingChallenge.Core\IntelifoxCodingChallenge.Core.csproj", "{415160F0-99A9-47F5-B178-C1CEA895EACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.EF", "IntelifoxCodingChallenge.EF\IntelifoxCodingChallenge.EF.csproj", "{53E75423-38DF-43F4-8064-0423DA5E6E47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelifoxCodingChallenge.EF", "IntelifoxCodingChallenge.EF\IntelifoxCodingChallenge.EF.csproj", "{53E75423-38DF-43F4-8064-0423DA5E6E47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

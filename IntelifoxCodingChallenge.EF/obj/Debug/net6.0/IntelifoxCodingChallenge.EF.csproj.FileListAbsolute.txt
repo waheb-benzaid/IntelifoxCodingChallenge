@@ -1,0 +1,14 @@
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.EF.deps.json
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.EF.runtimeconfig.json
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.EF.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.EF.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.csproj.AssemblyReference.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.AssemblyInfoInputs.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.AssemblyInfo.cs
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.csproj.CoreCompileInputs.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\refint\IntelifoxCodingChallenge.EF.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.genruntimeconfig.cache
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\ref\IntelifoxCodingChallenge.EF.dll
