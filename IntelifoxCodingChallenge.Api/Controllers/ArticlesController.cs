@@ -10,38 +10,50 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     [ApiController]
     public class ArticlesController : ControllerBase
     {
-        private readonly IBaseRepository<Article> _articlesRepository;
-        public ArticlesController(IBaseRepository<Article> articlesRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public ArticlesController(IUnitOfWork unitOfWork)
         {
-            _articlesRepository = articlesRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
+        [HttpGet("GetById")]
         public IActionResult GetById(int id)
         {
-            var result = _articlesRepository.GetById(id);
-            return Ok(result);
+            if (id != null)
+            {
+                var result = _unitOfWork.Articles.GetById(id);
+                return Ok(result);
+            }
+            return BadRequest();
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _articlesRepository.GetByIdAsync(id);
-            return Ok(result);
+            if (id != null)
+            {
+                var result = await _unitOfWork.Articles.GetByIdAsync(id);
+                return Ok(result);
+            }
+            return BadRequest();
         }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _articlesRepository.GetAll();
+            var result = _unitOfWork.Articles.GetAll();
             return Ok(result);
         }
 
-        [HttpGet("GetByTitle")]
-        public IActionResult GetByTitle(string title)
+        [HttpPost("AddArticle")]
+        public IActionResult AddArticle(Article article)
         {
-            var result = _articlesRepository.Find(b => b.Title == title);
-            return Ok(result);
+            if (article != null)
+            {
+                var result = _unitOfWork.Articles.Add(article);
+                return Ok(result);
+            }
+            return BadRequest();
         }
     }
 }

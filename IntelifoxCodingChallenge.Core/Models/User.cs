@@ -9,7 +9,7 @@ namespace IntelifoxCodingChallenge.Core.Models
 {
     public class User
     {   
-        public int Id { get; set; }
+        public int UserId { get; set; }
         [Required]
         public string Firstname { get; set; }
         public string Lastname { get; set; }
@@ -22,7 +22,7 @@ namespace IntelifoxCodingChallenge.Core.Models
 
         // A user has one-to-many relationship with "Article", that means a user can have multiple articles
         // so I defined a list of articles in the user model! 
-        public List<Article> Articles { get; set; }
+       // public List<Article> Articles { get; set; }
 
     }
 }

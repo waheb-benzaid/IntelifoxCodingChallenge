@@ -11,10 +11,10 @@ namespace IntelifoxCodingChallenge.Core.Repositories
     {
         T GetById(int id);
         Task<T> GetByIdAsync(int id);
-
-        //the difference between GetById and Find is that Find uses a predicate param, so we can filter by anything
-        T Find(Expression<Func<T, bool>> predicate);
-
         IEnumerable<T> GetAll();
+
+        T Add(T entity);
+
+        IEnumerable<T> AddRange(IEnumerable<T> entities);
     }
 }

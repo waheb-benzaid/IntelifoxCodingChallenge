@@ -17,5 +17,11 @@ namespace IntelifoxCodingChallenge.EF
         public IntelifoxDbContext(DbContextOptions<IntelifoxDbContext> options):base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>()
+                .ToTable("Categories"); // Configure table name explicitly
+        }
     }
 }

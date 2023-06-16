@@ -9,38 +9,42 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IBaseRepository<User> _userRepository;
-        public UserController(IBaseRepository<User> userRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public UserController(IUnitOfWork unitOfWork)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            var result = _userRepository.GetById(id);
+            var result = _unitOfWork.Users.GetById(id);
             return Ok(result);
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _userRepository.GetByIdAsync(id);
+            var result = await _unitOfWork.Users.GetByIdAsync(id);
             return Ok(result);
         }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _userRepository.GetAll();
+            var result = _unitOfWork.Users.GetAll();
             return Ok(result);
         }
 
-        [HttpGet("GetByLastname")]
-        public IActionResult GetByLastname(string lastname)
+        [HttpPost("AddUser")]
+        public IActionResult AddArticle(User user)
         {
-            var result = _userRepository.Find(b => b.Lastname == lastname);
-            return Ok(result);
+            if (user != null)
+            {
+                var result = _unitOfWork.Users.Add(user);
+                return Ok(result);
+            }
+            return BadRequest();
         }
     }
 }

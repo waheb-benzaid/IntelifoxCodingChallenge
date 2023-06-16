@@ -9,38 +9,42 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     [ApiController]
     public class TagsController : ControllerBase
     {
-        private readonly IBaseRepository<Tag> _tagsRepository;
-        public TagsController(IBaseRepository<Tag> tagsRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public TagsController(IUnitOfWork unitOfWork)
         {
-            _tagsRepository = tagsRepository;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            var result = _tagsRepository.GetById(id);
+            var result = _unitOfWork.Tags.GetById(id);
             return Ok(result);
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _tagsRepository.GetByIdAsync(id);
+            var result = await _unitOfWork.Tags.GetByIdAsync(id);
             return Ok(result);
         }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _tagsRepository.GetAll();
+            var result = _unitOfWork.Tags.GetAll();
             return Ok(result);
         }
 
-        [HttpGet("GetByName")]
-        public IActionResult GetByName(string name)
+        [HttpPost("AddTag")]
+        public IActionResult AddArticle(Tag tag)
         {
-            var result = _tagsRepository.Find(b => b.Name == name);
-            return Ok(result);
+            if (tag != null)
+            {
+                var result = _unitOfWork.Tags.Add(tag);
+                return Ok(result);
+            }
+            return BadRequest();
         }
     }
 }

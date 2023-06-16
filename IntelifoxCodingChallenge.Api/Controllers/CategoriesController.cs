@@ -1,4 +1,5 @@
-﻿using IntelifoxCodingChallenge.Core.Models;
+﻿using Azure;
+using IntelifoxCodingChallenge.Core.Models;
 using IntelifoxCodingChallenge.Core.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,37 +10,42 @@ namespace IntelifoxCodingChallenge.Api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly IBaseRepository<Category> _categoriesRepository;
-        public CategoriesController(IBaseRepository<Category> categoriesRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CategoriesController(IUnitOfWork unitOfWork)
         {
-            _categoriesRepository = categoriesRepository;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            return Ok(_categoriesRepository.GetById(id));
+            return Ok(_unitOfWork.Categories.GetById(id));
         }
 
         [HttpGet("GetByIdAsync")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _categoriesRepository.GetByIdAsync(id);
+            var result = await _unitOfWork.Categories.GetByIdAsync(id);
             return Ok(result);
         }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = _categoriesRepository.GetAll();
+            var result = _unitOfWork.Categories.GetAll();
             return Ok(result);
         }
 
-        [HttpGet("GetByName")]
-        public IActionResult GetByName(string name)
+        [HttpPost("AddCategory")]
+        public IActionResult AddArticle(Category category)
         {
-            var result = _categoriesRepository.Find(b => b.Name == name);
-            return Ok(result);
+            if (category != null)
+            {
+                var result = _unitOfWork.Categories.Add(category);
+                return Ok(result);
+
+            }
+            return BadRequest();
         }
     }
 }

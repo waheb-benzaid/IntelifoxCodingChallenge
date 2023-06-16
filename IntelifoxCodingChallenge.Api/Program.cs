@@ -18,7 +18,7 @@ builder.Services.AddDbContext<IntelifoxDbContext>(options =>
         b => b.MigrationsAssembly(typeof(IntelifoxDbContext).Assembly.FullName));
 });
 
-builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -4,6 +4,7 @@ using IntelifoxCodingChallenge.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IntelifoxCodingChallenge.EF.Migrations
 {
     [DbContext(typeof(IntelifoxDbContext))]
-    partial class IntelifoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230616185015_update columns")]
+    partial class updatecolumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace IntelifoxCodingChallenge.EF.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("IntelifoxCodingChallenge.Core.Models.Tag", b =>
