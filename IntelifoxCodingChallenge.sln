@@ -3,17 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Api", "IntelifoxCodingChallenge.Api.csproj", "{F417B1A0-03D5-4398-8D5C-C1FE29916B61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Api", "IntelifoxCodingChallenge.Api\IntelifoxCodingChallenge.Api.csproj", "{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Core", "..\IntelifoxCodingChallenge.Core\IntelifoxCodingChallenge.Core.csproj", "{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.Core", "IntelifoxCodingChallenge.Core\IntelifoxCodingChallenge.Core.csproj", "{415160F0-99A9-47F5-B178-C1CEA895EACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.EF", "..\IntelifoxCodingChallenge.EF\IntelifoxCodingChallenge.EF.csproj", "{AF9EEFCD-00CD-496F-8597-FB514476D00A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{75F31D77-C037-499A-9D76-1DED86D0E134}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder2", "NewFolder2", "{A8C97C9F-5A10-4340-8947-17603A0A16A9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder3", "NewFolder3", "{3587BF0E-A2E7-45ED-9591-2DAD35969A39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelifoxCodingChallenge.EF", "IntelifoxCodingChallenge.EF\IntelifoxCodingChallenge.EF.csproj", "{53E75423-38DF-43F4-8064-0423DA5E6E47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,28 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F417B1A0-03D5-4398-8D5C-C1FE29916B61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF9EEFCD-00CD-496F-8597-FB514476D00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF9EEFCD-00CD-496F-8597-FB514476D00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF9EEFCD-00CD-496F-8597-FB514476D00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF9EEFCD-00CD-496F-8597-FB514476D00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE7F939-D465-41ED-99A0-2B9C3EF7E4EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415160F0-99A9-47F5-B178-C1CEA895EACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415160F0-99A9-47F5-B178-C1CEA895EACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415160F0-99A9-47F5-B178-C1CEA895EACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415160F0-99A9-47F5-B178-C1CEA895EACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E75423-38DF-43F4-8064-0423DA5E6E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E75423-38DF-43F4-8064-0423DA5E6E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E75423-38DF-43F4-8064-0423DA5E6E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E75423-38DF-43F4-8064-0423DA5E6E47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F417B1A0-03D5-4398-8D5C-C1FE29916B61} = {75F31D77-C037-499A-9D76-1DED86D0E134}
-		{F079C4EC-2376-4133-BDBB-BDD5C22B3CB6} = {A8C97C9F-5A10-4340-8947-17603A0A16A9}
-		{AF9EEFCD-00CD-496F-8597-FB514476D00A} = {3587BF0E-A2E7-45ED-9591-2DAD35969A39}
-	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {185873E1-73CF-4601-A661-02D8BAB65F69}
+		SolutionGuid = {994233E5-B431-47CD-B87A-957B67EEC6B3}
 	EndGlobalSection
 EndGlobal
