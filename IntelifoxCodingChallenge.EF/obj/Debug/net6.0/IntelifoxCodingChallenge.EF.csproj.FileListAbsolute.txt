@@ -12,3 +12,6 @@ C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChalleng
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.pdb
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.genruntimeconfig.cache
 C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\ref\IntelifoxCodingChallenge.EF.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.dll
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\bin\Debug\net6.0\IntelifoxCodingChallenge.Core.pdb
+C:\Users\waheb\Documents\Work\Intelifox\Coding Challenge\IntelifoxCodingChallenge\IntelifoxCodingChallenge.EF\obj\Debug\net6.0\IntelifoxCodingChallenge.EF.csproj.CopyComplete

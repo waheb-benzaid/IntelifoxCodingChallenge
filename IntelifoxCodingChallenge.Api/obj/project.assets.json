@@ -1243,10 +1243,21 @@
           }
         }
       },
+      "IntelifoxCodingChallenge.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/IntelifoxCodingChallenge.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IntelifoxCodingChallenge.Core.dll": {}
+        }
+      },
       "IntelifoxCodingChallenge.EF/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "IntelifoxCodingChallenge.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.7"
         },
@@ -3939,6 +3950,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "IntelifoxCodingChallenge.Core/1.0.0": {
+      "type": "project",
+      "path": "../IntelifoxCodingChallenge.Core/IntelifoxCodingChallenge.Core.csproj",
+      "msbuildProject": "../IntelifoxCodingChallenge.Core/IntelifoxCodingChallenge.Core.csproj"
     },
     "IntelifoxCodingChallenge.EF/1.0.0": {
       "type": "project",

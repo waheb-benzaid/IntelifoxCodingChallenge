@@ -1155,6 +1155,16 @@
             "rid": "win"
           }
         }
+      },
+      "IntelifoxCodingChallenge.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/IntelifoxCodingChallenge.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IntelifoxCodingChallenge.Core.dll": {}
+        }
       }
     }
   },
@@ -3500,10 +3510,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "IntelifoxCodingChallenge.Core/1.0.0": {
+      "type": "project",
+      "path": "../IntelifoxCodingChallenge.Core/IntelifoxCodingChallenge.Core.csproj",
+      "msbuildProject": "../IntelifoxCodingChallenge.Core/IntelifoxCodingChallenge.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "IntelifoxCodingChallenge.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.7"
@@ -3541,7 +3557,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\waheb\\Documents\\Work\\Intelifox\\Coding Challenge\\IntelifoxCodingChallenge\\IntelifoxCodingChallenge.Core\\IntelifoxCodingChallenge.Core.csproj": {
+              "projectPath": "C:\\Users\\waheb\\Documents\\Work\\Intelifox\\Coding Challenge\\IntelifoxCodingChallenge\\IntelifoxCodingChallenge.Core\\IntelifoxCodingChallenge.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
